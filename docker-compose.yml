@@ -6,3 +6,10 @@ web:
   volumes:
     - ./docker/nginx/public:/var/www/public
     - ./docker/nginx/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
+  links:
+    - app
+app:
+  image: nmcteam/php56
+  volumes:
+    - ./docker/php-fpm/php-fpm.conf:/etc/php5/fpm/php-fpm.conf
+    - .:/var/www
