@@ -4,7 +4,7 @@ web:
   ports:
     - "8080:80"
   volumes:
-    - .:/var/www/public
+    - .:/var/www
     - ./docker/nginx/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
   links:
     - app
