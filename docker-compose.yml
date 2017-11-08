@@ -1,3 +1,8 @@
 # docker-compose.yml
-server:
-  build: .
+web:
+  image: cloudlog/nginx
+  ports:
+    - "8080:80"
+  volumes:
+    - ./docker/nginx/public:/var/www/public
+    - ./docker/nginx/vhost.conf:/etc/nginx/sites-enabled/vhost.conf
